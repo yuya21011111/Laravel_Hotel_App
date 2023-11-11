@@ -67,7 +67,7 @@ class BookingController extends Controller
     
         // `cut` フラグが 0 の場合、最大予約数に達しているためリダイレクトします。
         if ($cut == 0) {
-            return redirect()->back()->with('error', 'Maximum number of this room is already booked.');
+            return redirect()->back()->with('error', 'お部屋の予約数が最大です、ご予約ができません。');
         }
     
         // セッションにカートの情報を追加します。
@@ -78,7 +78,7 @@ class BookingController extends Controller
         session()->push('cart_children', $request->children);
     
         // リダイレクトして成功メッセージを表示します。
-        return redirect()->back()->with('success', 'Room is added to the cart successfully.');
+        return redirect()->back()->with('success', 'カートにアイテムを追加しました。');
     }
     
 
@@ -149,7 +149,7 @@ class BookingController extends Controller
         }
 
        // 前のページにリダイレクトし、カートアイテムが削除されたことを示す成功メッセージを表示します
-        return redirect()->back()->with('success', 'Cart items is deleted.');
+        return redirect()->back()->with('success', 'カート内のアイテムを削除しました。');
     }
 
     public function checkout()
@@ -391,6 +391,6 @@ class BookingController extends Controller
         session()->forget('billing_city');
         session()->forget('billing_zip');
 
-        return redirect()->route('home')->with('success', 'Payment is successful');        
+        return redirect()->route('home')->with('success', 'お支払いが完了いたしました。');        
     }
 }
