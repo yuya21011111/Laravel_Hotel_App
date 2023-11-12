@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">New youtube Video_id<</label>
+                                    <label class="form-label">New youtube Video_id</label>
                                     <input type="text" class="form-control" name="video_id" value="{{ $video_data->video_id }}">
                                 </div>
                                 <div class="mb-4">
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">更新</button>
                                 </div>
                             </div>
                         </div>

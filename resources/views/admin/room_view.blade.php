@@ -35,7 +35,7 @@
                                 <td>{{ $row->featured_photo }}</td>
                                 <td class="pt_10 pb_10">
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$i}}">
-                                        Datail
+                                        Detail
                                     </button>
                                     <a href="{{ route('admin_room_gallery',$row->id) }}" class="btn btn-success">Gallery</a>
                                     <a href="{{ route('admin_room_edit', $row->id) }}" class="btn btn-primary">Edit</a>

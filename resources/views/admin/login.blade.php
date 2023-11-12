@@ -24,7 +24,7 @@
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="card card-primary border-box">
                             <div class="card-header card-header-auth">
-                                <h4 class="text-center">Admin Panel Login</h4>
+                                <h4 class="text-center text-danger">Admin Panel Login</h4>
                             </div>
                             <div class="card-body card-body-auth">
                                 @if(session()->get('success'))
@@ -48,14 +48,14 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block">
                                             Login
                                         </button>
                                     </div>
                                     <div class="form-group">
                                         <div>
-                                            <a href="{{ route('admin_forget_password') }}">
-                                                Forget Password?
+                                            <a href="{{ route('admin_forget_password') }}" class="text-danger">
+                                               パスワードをお忘れですか？
                                             </a>
                                         </div>
                                     </div>

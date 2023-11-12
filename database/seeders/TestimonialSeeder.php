@@ -15,16 +15,16 @@ class TestimonialSeeder extends Seeder
     {
         DB::table('testimonials')->insert([
             [
-                'photo' => 'sample1.png',
-                'name' => 'JunDo',
-                'designation' => 'CA',
-                'comment' => 'test',
+                'photo' => 'user1.png',
+                'name' => 'ジョン・ドウ',
+                'designation' => '無職',
+                'comment' => 'とてもいいホテルです。',
             ],
             [
-                'photo' => 'sample2.png',
-                'name' => 'KaiDou',
-                'designation' => 'CIO',
-                'comment' => 'test',
+                'photo' => 'user2.png',
+                'name' => 'ジョン・ドウ',
+                'designation' => '無職',
+                'comment' => 'とてもいいホテルです。',
             ],
         ]);
     }

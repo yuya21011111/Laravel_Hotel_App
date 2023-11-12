@@ -28,7 +28,6 @@ use App\Http\Controllers\admin\AdminAmenityController;
 use App\Http\Controllers\admin\AdminRoomController;
 use App\Http\Controllers\admin\AdminSettingController;
 use App\Http\Controllers\front\RoomController;
-
 use App\Http\Controllers\customer\CustomerHomeController;
 use App\Http\Controllers\customer\CustomerLoginController;
 use App\Http\Controllers\customer\CustomerProfileController;
@@ -92,21 +91,6 @@ Route::group(['middleware' => ['customer:customer']], function(){
     Route::get('/customer/invoice/{id}',[CustomerOrderController::class,'invoice'])->name('customer_invoice');
 });
 
-// Admin
-Route::get('/admin/home',[AdminHomeController::class,'index'])->name('admin_home')->middleware('admin:admin');
-Route::get('/admin/setting',[AdminSettingController::class,'index'])->name('admin_setting')->middleware('admin:admin');
-Route::post('/admin/setting/update/{id}',[AdminSettingController::class,'update'])->name('admin_setting_update')->middleware('admin:admin');
-
-Route::get('/admin/datewise-rooms',[AdminDatewiseRoomController::class,'index'])->name('admin_datewise_rooms')->middleware('admin:admin');
-Route::post('/admin/datewise-rooms/update',[AdminDatewiseRoomController::class,'show'])->name('admin_datewise_rooms_submit')->middleware('admin:admin');
-
-Route::get('/admin/customers',[AdminCustomerController::class,'index'])->name('admin_customer')->middleware('admin:admin');
-Route::get('/admin/customers/change-status/{id}',[AdminCustomerController::class,'change_status'])->name('admin_customer_change_status')->middleware('admin:admin');
-Route::get('/admin/order/view',[AdminOrderController::class,'index'])->name('admin_orders')->middleware('admin:admin');
-Route::get('/admin/order/invoice/{id}',[AdminOrderController::class,'invoice'])->name('admin_invoice')->middleware('admin:admin');
-Route::get('/admin/order/delete/{id}',[AdminOrderController::class,'delete'])->name('admin_order_delete');
-
-
 Route::get('/admin/login',[AdminLoginController::class,'index'])->name('admin_login');
 Route::get('/admin/logout',[AdminLoginController::class,'logout'])->name('admin_logout');
 Route::post('/admin/login-submit',[AdminLoginController::class, 'login_submit'])->name('admin_login_submit');
@@ -116,6 +100,17 @@ Route::get('/admin/reset-password/{token}/{email}',[AdminLoginController::class,
 Route::post('/admin/reset-password-submit',[AdminLoginController::class, 'reset_password_submit'])->name('admin_reset_password_submit');
 
 Route::group(['middleware' => ['admin:admin']], function(){
+    
+    Route::get('/admin/home',[AdminHomeController::class,'index'])->name('admin_home');
+    Route::get('/admin/setting',[AdminSettingController::class,'index'])->name('admin_setting');
+    Route::post('/admin/setting/update/{id}',[AdminSettingController::class,'update'])->name('admin_setting_update');
+    Route::get('/admin/datewise-rooms',[AdminDatewiseRoomController::class,'index'])->name('admin_datewise_rooms');
+    Route::post('/admin/datewise-rooms/update',[AdminDatewiseRoomController::class,'show'])->name('admin_datewise_rooms_submit');
+    Route::get('/admin/customers',[AdminCustomerController::class,'index'])->name('admin_customer');
+    Route::get('/admin/customers/change-status/{id}',[AdminCustomerController::class,'change_status'])->name('admin_customer_change_status');
+    Route::get('/admin/order/view',[AdminOrderController::class,'index'])->name('admin_orders')->middleware('admin:admin');
+    Route::get('/admin/order/invoice/{id}',[AdminOrderController::class,'invoice'])->name('admin_invoice');
+    Route::get('/admin/order/delete/{id}',[AdminOrderController::class,'delete'])->name('admin_order_delete');
     Route::get('/admin/edit-profile',[AdminProfileController::class,'index'])->name('admin_profile');
     Route::post('/admin/edit-profile-submit',[AdminProfileController::class,'profile_submit'])->name('admin_profile_submit');
 

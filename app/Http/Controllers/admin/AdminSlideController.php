@@ -45,7 +45,7 @@ class AdminSlideController extends Controller
         $obj->save();
     
         // 元のページにリダイレクトして成功メッセージを表示
-        return redirect()->back()->with('success', 'Slide is saved successfully.');
+        return redirect()->back()->with('success', '正常に更新されました。');
     }
     
     public function edit($id)

@@ -140,6 +140,7 @@
                         @else
                             <li class="menu"><a href="{{ route('customer_home') }}">Dashboard</a></li>
                         @endif
+                        <li class="menu"><a class="text-danger" href="{{ route('admin_login') }}">Admin</a></li>
 
                     </ul>
                 </div>
