@@ -173,7 +173,7 @@
                             </li>
                             @if ($global_page_data->about_status == 1)
                                 <li class="nav-item">
-                                    <a href="{{ 'about' }}"
+                                    <a href="{{ route('about') }}"
                                         class="nav-link">{{ $global_page_data->about_heading }}</a>
                                 </li>
                             @endif
@@ -267,7 +267,7 @@
                     <div class="item">
                         <h2 class="heading">Useful Links</h2>
                         <ul class="useful-links">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
                             @if ($global_page_data->terms_status == 1)
                                 <li><a href="{{ route('terms') }}">Terms and Conditions</a></li>
                             @endif

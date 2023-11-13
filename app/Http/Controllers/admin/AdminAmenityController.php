@@ -14,7 +14,7 @@ class AdminAmenityController extends Controller
         $amenities = Amenity::get();
     
         // Amenity_viewビューにアメニティデータを渡して表示します
-        return view('admin.Amenity_view', compact('amenities'));
+        return view('admin.amenity_view', compact('amenities'));
     }
     
     public function add()

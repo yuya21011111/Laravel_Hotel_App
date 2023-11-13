@@ -8,8 +8,17 @@ use App\Models\Post;
 
 class BlogController extends Controller
 {
-    
-    public function single_post($id){
+    public function index()
+    {
+         // 'id'を降順で並べ替えて、データベースからすべての投稿を取得します
+        $post_all = Post::orderBy('id','desc')->paginate(9);
+
+        // 取得した投稿を'front.blog'ビューに渡し、変数名を'post_all'として使用できるようにします
+        return view('front.blog', compact('post_all'));
+    }
+
+    public function single_post($id)
+    {
         // `Post` モデルから、指定された `id` に一致する投稿を検索して取得します。
         $single_post_data = Post::where('id', $id)->first();
     
