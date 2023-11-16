@@ -3,7 +3,7 @@
 @section('heading', 'Rooms (Booked and Available)'. $selected_date)
 
 @section('right_top_button')
-<a href="{{ route('admin_datewise_rooms') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Back to Previous</a>
+<a href="{{ route('admin_datewise_rooms') }}" class="btn btn-primary"><i class="fa fa-plus"></i>戻る</a>
 @endsection
 
 @section('main_content')
@@ -16,7 +16,7 @@
                         <table class="table table-bordered" id="">
                             <thead>
                             <tr>
-                                <th>SL</th>
+                                <th>No</th>
                                 <th>Room Name</th>
                                 <th>Total Rooms</th>
                                 <th>Booked Rooms</th>

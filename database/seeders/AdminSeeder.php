@@ -19,13 +19,13 @@ class AdminSeeder extends Seeder
                 'name' => 'test1',
                 'email' => 'test1@test.com',
                 'password' => Hash::make('password123'),
-                'photo' => 'admin.jpg'
+                'photo' => 'admin.png'
             ],
             [
                 'name' => 'test2',
                 'email' => 'test2@test.com',
                 'password' => Hash::make('password123'),
-                'photo' => 'admin.jpg'
+                'photo' => 'admin.png'
             ],
         ]);
     }

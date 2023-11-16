@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('about_heading');
-            $table->string('about_content');
+            $table->text('about_content');
             $table->integer('about_status');
             $table->string('terms_heading');
-            $table->string('terms_content');
+            $table->text('terms_content');
             $table->integer('terms_status');
             $table->string('privacy_heading');
-            $table->string('privacy_content');
+            $table->text('privacy_content');
             $table->string('privacy_status');
             $table->string('contact_heading');
             $table->text('contact_map')->nullable();
