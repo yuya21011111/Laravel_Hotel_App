@@ -21,15 +21,15 @@
                     @csrf
                 <div class="login-form">
                     <div class="mb-3">
-                        <label for="" class="form-label">Email Address</label>
+                        <label for="" class="form-label">メールアドレス</label>
                         <input type="text" class="form-control" name="email">
                         @if($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     @endif
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary bg-website">Submit</button>
-                        <a href="{{ route('customer_login') }}" class="primary-color">Back to Login Page</a>
+                        <button type="submit" class="btn btn-primary bg-website">送信</button>
+                        <a href="{{ route('customer_login') }}" class="primary-color">戻る</a>
                     </div>
                 </div>
                 </form>
