@@ -67,17 +67,15 @@
                     <h4>Make Payment</h4>
                     <select name="payment_method" class="form-control select2" id="paymentMethodChange" autocomplete="off">
                         <option value="">Select Payment Method</option>
-                        <option value="PayPal">PayPal</option>
+                        <option value="PayPal">PayPal<span>(準備中)</span></option>
                         <option value="Stripe">Stripe</option>
                     </select>
 
-                    <div class="paypal mt_20">
-                        <h4>Pay with PayPal</h4>
+                    {{-- <div class="paypal mt_20">
                         <div id="paypal-button"></div>
-                    </div>
+                    </div> --}}
 
                     <div class="stripe mt_20">
-                        <h4>Pay with Stripe</h4>
                         @php 
                           $cents =  $total_price ;
                           $customer_email = Auth::guard('customer')->user()->email;
@@ -102,30 +100,14 @@
             <div class="col-lg-4 col-md-4 checkout-right">
                 <div class="inner">
                     <h4 class="mb_10">Billing Details</h4>
-                    <div>
-                        Name: {{ session()->get('billing_name') }}
-                    </div>
-                    <div>
-                        Email: {{ session()->get('billing_email') }}
-                    </div>
-                    <div>
-                        Phone: {{ session()->get('billing_phone') }}
-                    </div>
-                    <div>
-                        Country: {{ session()->get('billing_country') }}
-                    </div>
-                    <div>
-                        Address: {{ session()->get('billing_address') }}
-                    </div>
-                    <div>
-                        State: {{ session()->get('billing_state') }}
-                    </div>
-                    <div>
-                        City: {{ session()->get('billing_city') }}
-                    </div>
-                    <div>
-                        Zip: {{ session()->get('billing_zip') }}
-                    </div>
+                    <div>名前: {{ session()->get('billing_name') }}</div>
+                    <div>メールアドレス: {{ session()->get('billing_email') }}</div>
+                    <div>電話番号: {{ session()->get('billing_phone') }}</div>
+                    <div>郵便番号: {{ session()->get('billing_zip') }}</div>
+                    <div>国:{{ session()->get('billing_country') }}</div>
+                  　<div>都道府県: {{ session()->get('billing_state') }}</div>
+                  　<div>市区町村: {{ session()->get('billing_city') }}</div>
+                    <div>その他の住所(マンションなど): {{ session()->get('billing_address') }}</div>
                 </div>
             </div>
                 <div class="col-lg-4 col-md-4 checkout-right">
@@ -179,7 +161,7 @@
                                         <br>
                                         {{ $arr_cart_checkin_date[$i] }} - {{ $arr_cart_checkout_date[$i] }}
                                         <br>
-                                        Adult: {{ $arr_cart_adult[$i] }}, Children: {{ $arr_cart_children[$i] }}
+                                        大人: {{ $arr_cart_adult[$i] }}, 子ども: {{ $arr_cart_children[$i] }}
                                     </td>
                                     <td class="p_price">
                                         @php 
@@ -190,6 +172,10 @@
                                         $t1 = strtotime($d1_new);
                                         $t2 =  strtotime($d2_new);
                                         $diff = ($t2 - $t1) / 60 / 60 /24;
+                                        if($diff == 0)
+                                        {
+                                        $diff = 1;
+                                        }
                                         $price_Subtotal = $room_data->price * $diff;
                                         $total_price  =   $total_price   + $price_Subtotal;
                                         echo '¥' . $price_Subtotal ;

@@ -210,8 +210,9 @@ class BookingController extends Controller
     
     // Paypal決済実装予定（仮）
 
-    // public function paypal()
-    // {
+    public function paypal()
+    {
+      
     //         $final_price = '5';
     //         $client = 'AbE9iou3ITqq_W5ofcM_WBK7mK6BN19kFZ9URfTqLp7q2U5yxkh2rGxXXoqCBq_22-Y_o-Q4FoByr3iY';
     //         $secret = 'EIDWTlv0RZi8q81whlj-GaEkl7r09b5YHvtqxEzpoElFpGO2QTP2CHgd3mtS_-YZ9sdrZaU3acsK8vPt';
@@ -246,7 +247,7 @@ class BookingController extends Controller
     //        if($result->state == 'approved'){
     //          $paid_amount = $result->transactions[0]->amount->total;
     //         }
-    // }
+    }
 
     public function stripe(Request $request,$final_price)
     {

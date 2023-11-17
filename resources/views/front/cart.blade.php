@@ -25,10 +25,10 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Serial</th>
+                                <th>No</th>
                                 <th>Photo</th>
                                 <th>Room Info</th>
-                                <th>Price/Night</th>
+                                <th>Price</th>
                                 <th>Checkin</th>
                                 <th>Checkout</th>
                                 <th>Guests</th>
@@ -88,8 +88,8 @@
                                 <td>{{ $arr_cart_checkin_date[$i] }}</td>
                                 <td>{{ $arr_cart_checkout_date[$i] }}</td>
                                 <td>
-                                    Adult: {{ $arr_cart_adult[$i] }}<br>
-                                    Children: {{ $arr_cart_children[$i] }}
+                                    大人: {{ $arr_cart_adult[$i] }}<br>
+                                    子ども: {{ $arr_cart_children[$i] }}
                                 </td>
                                 <td>
                                     @php 
@@ -100,6 +100,10 @@
                                       $t1 = strtotime($d1_new);
                                       $t2 =  strtotime($d2_new);
                                       $diff = ($t2 - $t1) / 60 / 60 /24;
+                                      if($diff == 0)
+                                      {
+                                        $diff = 1;
+                                      }
                                       $price_Subtotal = $room_data->price * $diff;
                                       $total_price  =   $total_price   + $price_Subtotal;
                                       echo '¥' . $price_Subtotal ;

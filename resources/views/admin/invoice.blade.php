@@ -36,19 +36,19 @@
 
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <div class="section-title">Order Summary</div>
-                    <p class="section-lead">Hotel room Information are given below in detail</p>
+                    <div class="section-title">領収書</div>
+                    <p class="section-lead">ホテルの客室情報は下記の通りになります。</p>
                     <hr class="invoice-above-table">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-md">
                             <tr>
-                                <th>SL</th>
-                                <th>Room Name</th>
+                                <th>No</th>
+                                <th>お部屋</th>
                                 <th class="text-center">Checkin Date</th>
                                 <th class="text-center">Checkout Date</th>
-                                <th class="text-center">Number of Adult</th>
-                                <th class="text-center">Number of Children</th>
-                                <th class="text-center">Subtotal</th>
+                                <th class="text-center">大人</th>
+                                <th class="text-center">子ども</th>
+                                <th class="text-center">合計</th>
                             </tr>
                             @php
                                $total_price  = 0;
@@ -83,7 +83,7 @@
                     <div class="row mt-4">
                         <div class="col-lg-12 text-right">
                             <div class="invoice-detail-item">
-                                <div class="invoice-detail-name">Total</div>
+                                <div class="invoice-detail-name">合計</div>
                                 <div class="invoice-detail-value invoice-detail-value-lg">
                                     ¥{{ $total_price }}
                                 </div>

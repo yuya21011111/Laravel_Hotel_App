@@ -182,5 +182,8 @@ return [
         'gender' => '性別',
         'status' => 'ステータス',
         'read_at' => '登録日',
+        'adult' => '大人',
+        'children' => '子ども',
+        'room_id' => 'お部屋',
     ],
 ];

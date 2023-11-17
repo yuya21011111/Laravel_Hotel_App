@@ -20,7 +20,7 @@
                 <form action="{{ route('payment') }}" method="post" class="frm_checkout">
                     @csrf
                     <div class="billing-info">
-                        <h4 class="mb_30">Billing Information</h4>
+                        <h4 class="mb_30">Billing Details</h4>
                         @php 
                         if(session()->has('billing_name')) {
                             $billing_name = session()->get('billing_name');
@@ -80,36 +80,36 @@
                         @endphp
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Name:</label>
+                                <label for="">名前:</label>
                                 <input type="text" class="form-control mb_15" name="billing_name" value="{{ $billing_name }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Email Address:</label>
+                                <label for="">メールアドレス:</label>
                                 <input type="text" class="form-control mb_15" name="billing_email" value="{{$billing_email }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Phone Number:</label>
+                                <label for="">電話番号:</label>
                                 <input type="text" class="form-control mb_15" name="billing_phone" value="{{ $billing_phone }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Country:</label>
+                                <label for="">郵便番号:</label>
+                                <input type="text" class="form-control mb_15" name="billing_zip" value="{{ $billing_zip }}">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">国:</label>
                                 <input type="text" class="form-control mb_15" name="billing_country" value="{{ $billing_country }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Address:</label>
-                                <input type="text" class="form-control mb_15" name="billing_address" value="{{ $billing_address }}">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">State:</label>
+                                <label for="">都道府県:</label>
                                 <input type="text" class="form-control mb_15" name="billing_state" value="{{ $billing_state }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">City:</label>
+                                <label for="">市区町村:</label>
                                 <input type="text" class="form-control mb_15" name="billing_city" value="{{ $billing_city }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Zip Code:</label>
-                                <input type="text" class="form-control mb_15" name="billing_zip" value="{{ $billing_zip }}">
+                                <label for="">その他の住所(マンションなど):</label>
+                                <input type="text" class="form-control mb_15" name="billing_address" value="{{ $billing_address }}">
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                         <br>
                                         {{ $arr_cart_checkin_date[$i] }} - {{ $arr_cart_checkout_date[$i] }}
                                         <br>
-                                        Adult: {{ $arr_cart_adult[$i] }}, Children: {{ $arr_cart_children[$i] }}
+                                        大人: {{ $arr_cart_adult[$i] }}, 子ども: {{ $arr_cart_children[$i] }}
                                     </td>
                                     <td class="p_price">
                                         @php 
